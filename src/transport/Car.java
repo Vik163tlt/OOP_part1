@@ -2,13 +2,8 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double enginVolume_L;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String transmission;
     private final String bodyCar;
     private String regNumber;
@@ -17,27 +12,15 @@ public class Car {
 
 
     public Car(String brand, String model, double enginVolume_L, String color, int productionYear, String productionCountry, String transmission, String bodyCar, String regNumber, int placesCount, boolean winterTires) {
-        this.brand = validOrDefult(brand, "defult");
-        this.model = validOrDefult(model, "defult");
-        this.productionCountry = validOrDefult(productionCountry, "defult");
-        this.productionYear = productionYear <= 0 ? 2000 : productionYear;
+        super(brand,model,productionYear,color ,productionCountry,productionYear);
         this.bodyCar = validOrDefult(bodyCar, "defult");
         this.placesCount = placesCount;
 
         setEnginVolume_L(enginVolume_L);
-        setColor(color);
         setRegNumber(regNumber);
         setTransmission(transmission);
         setWinterTires(winterTires);
 
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
     }
 
     public double getEnginVolume_L() {
@@ -46,23 +29,6 @@ public class Car {
 
     public void setEnginVolume_L(double enginVolume_L) {
         this.enginVolume_L = enginVolume_L > 0.0f ? enginVolume_L : 1.5f;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = validOrDefult(color, "белый");
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-
-    public String getProductionCountry() {
-        return productionCountry;
     }
 
     public void setTransmission(String transmission) {
@@ -82,7 +48,7 @@ public class Car {
     }
 
     public void setRegNumber(String regNumber) {
-        this.regNumber = validOrDefult(model, "defult");
+        this.regNumber = validOrDefult(regNumber, "defult");
     }
 
     public int getPlacesCount() {

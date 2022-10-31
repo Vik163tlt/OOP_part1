@@ -1,4 +1,6 @@
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 import java.time.LocalDate;
 
@@ -35,6 +37,7 @@ public class Main {
 
         System.out.println();
 
+
         Car.Key key1 = new Car.Key(true,false);
         Car.Key key2 = new Car.Key(false,true);
 
@@ -50,6 +53,24 @@ public class Main {
 
         System.out.println(insurance1);
         System.out.println(insurance2);
+
+        System.out.println("\nКласс transport.Train:\n");
+
+        Train train1 = new Train("Ласточка","B-901",2011,"Россия",null,301,3500,0,"Белорусский вокзал","Минск-Пассажирский",11);
+        Train train2 = new Train("Ленинград","D-125",2019 ,"Россия",null,270 ,1700 ,0,"Ленинградский вокзал","Ленинград-Пассажирский",8);
+
+        System.out.println(train1);
+        System.out.println(train2);
+
+        System.out.println("\nКласс transport.Bus:\n");
+
+        Bus bus1 = new Bus("Газ","B-901",2011,"Россия","зеленый",90);
+        Bus bus2 = new Bus("Икарус","D-125",2019 ,"Венгрия",null,70);
+        Bus bus3 = new Bus("Ман","А-100",2013 ,"Германия","красный",-100);
+
+        System.out.println(bus1);
+        System.out.println(bus2);
+        System.out.println(bus3);
 
         System.out.println("\nКласс Flower:\n");
 
