@@ -1,28 +1,60 @@
+import java.time.LocalDate;
+
 public class Human {
 
-    int curentYear = 2022;
+    private int curentYear = LocalDate.now().getYear();
 
-    public String name;
-    public String town;
-    public int dateOfBirth;
-    public String job;
+    private String name;
+    private String town;
+    private int dateOfBirth;
+    private String job;
 
-    Human (String name, String town, int dateOfBirth, String job) {
-        if (name == null || name.isEmpty()) {
-            this.name = "!информация об имени не указана!";}
-        else {this.name = name;}
-        if (town == null || town.isEmpty()) {
-            this.town = "!информация об имени не указана!";}
-        else {this.town = town;}
-        if (dateOfBirth >= 0) {
-            this.dateOfBirth = dateOfBirth;}
-        else {this.dateOfBirth = Math.abs(dateOfBirth);}
-        if (job == null || job.isEmpty()) {
-            this.job = "!информация об имени не указана!";}
-        else {this.job = job;}
+    public Human (String name, String town, int dateOfBirth, String job) {
+
+        setName(name);
+        setTown(town);
+        setJob(job);
+        setDateOfBirth(dateOfBirth);
+
     }
 
-    void hallo() {
-        System.out.println("Привет! Меня зовут "+ name +" Я из города "+ town +" Я родился в "+( curentYear - dateOfBirth )+" году. Я работаю на должности "+ job+". Будем знакомы!");
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = validOrDefult(name, "!Информация не указана!");
+
+    }
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = validOrDefult(town, "!Информация не указана!");
+    }
+
+    public int getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(int dateOfBirth) {
+        this.dateOfBirth = Math.max(dateOfBirth, 0);
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = validOrDefult(job, "!Информация не указана!");
+    }
+
+    private String validOrDefult (String value, String defultValue) {
+        return value == null || value.isBlank() ? defultValue : value;
+    }
+
+    public String toString() {
+        return "Привет! Меня зовут "+ name +" Я из города "+ town +" Я родился в "+( curentYear - dateOfBirth )+" году. Я работаю на должности "+ job+". Будем знакомы!";
     }
 }
