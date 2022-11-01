@@ -29,11 +29,15 @@ public class Main {
         Car kiaSportage_4 = new Car ("Kia","Sportage 4-го поколения",2.4,"красный",2018,"Южная Корея", "автоматическая","седан","x123xx177rus", 5,false);
         Car hyundaiAvante  = new Car("Hyundai","Avante",1.6 ,"оранжевый",2016,"Южная Корея", "механическая","хетчбек","x010xx001", 5,true);
 
+
         System.out.println(ladaGranta);
         System.out.println(audi_A8);
         System.out.println(bmw_Z8);
         System.out.println(kiaSportage_4);
         System.out.println(hyundaiAvante);
+        hyundaiAvante.refill();
+
+        hyundaiAvante.refill();
 
         System.out.println();
 
@@ -61,6 +65,7 @@ public class Main {
 
         System.out.println(train1);
         System.out.println(train2);
+        train2.refill();
 
         System.out.println("\nКласс transport.Bus:\n");
 

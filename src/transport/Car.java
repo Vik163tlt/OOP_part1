@@ -22,6 +22,14 @@ public class Car extends Transport {
         setWinterTires(winterTires);
 
     }
+    public void refill(){
+        if (getModel() == "Элктрокар") {
+            System.out.println("Заправляется на специальных электропарковках.");}
+        else {
+            System.out.println("Можно заправлять бензином или дизелем на заправке.");}
+
+    }
+
 
     public double getEnginVolume_L() {
         return enginVolume_L;

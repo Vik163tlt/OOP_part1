@@ -15,6 +15,10 @@ public class Train extends Transport {
         setEndStation(endStation);
         setCarriageNumber(carriageNumber);
     }
+    public void refill(){
+        System.out.println("Необходим заправлять дизелем.");
+
+    }
 
     public float getPrice() {
         return price;
